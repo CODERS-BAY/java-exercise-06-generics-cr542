@@ -20,7 +20,7 @@ public class SortedLinkedList<T extends Comparable<T>> implements SortedList<T> 
         } else {
             previousNode.next = newNode;
         }
-        newNode.next = currentNode;
+        newNode.next = null;
     }
 
     @Override
