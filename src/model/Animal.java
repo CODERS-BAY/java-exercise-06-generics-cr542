@@ -8,8 +8,8 @@ public class Animal implements Comparable<Animal> {
         this.name = name;
     }
 
-    public String noise() {
-        return "Määäääh";
+    public void noise() {
+        System.out.println("Määäääh");
     }
 
     @Override
