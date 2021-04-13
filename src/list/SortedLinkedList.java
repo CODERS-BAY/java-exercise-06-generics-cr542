@@ -8,18 +8,19 @@ public class SortedLinkedList<T extends Comparable<T>> implements SortedList<T> 
 
     @Override
     public void insert(T element) {
-        Node node = new Node(element);
-        if(head == null) {
-            head = node;
-            increment();
-        } else {
-            Node currentNode = head;
-            while (currentNode.next != null) {
-                currentNode = currentNode.next;
-            }
-            currentNode.next = node;
-            increment();
+        Node newNode = new Node(element);
+        Node currentNode = head;
+        Node previousNode = null;
+        while (currentNode != null) { // hier der Vergleich??
+            previousNode = currentNode;
+            currentNode = currentNode.next;
         }
+        if (previousNode == null) {
+            head = newNode;
+        } else {
+            previousNode.next = newNode;
+        }
+        newNode.next = currentNode;
     }
 
     @Override
